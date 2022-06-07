@@ -8,20 +8,24 @@ const AddUser = () => {
   const [bio,setBio] = useState('');
 
   const {userEvent} = useContext(AppContext);
-  const handleAdd = () => {
+  const handleAdd = (e:any) => {
+    e.preventDefault();
+    // if(name==='' || age===''||bio===''){
+    //   alert("All fields are mandatory");
+    // }
     const user = {id:Math.random(), name , age, bio}
     userEvent("ADD_USER", {newUser:user});
     setName('');
     setAge('');
-    setBio("")
+    setBio('');
   }
 
   return (
-    <div className='adduser'>
+    <div className='adduser' onSubmit={handleAdd}>
         <h2>Add New User</h2>
         <form action="">
           <div className='form-control'>
-            <input type="text" required placeholder='Name' value={name} onChange={(e)=>{setName(e.target.value)}} />
+            <input type="text"   placeholder='Name' required value={name} onChange={(e)=>{setName(e.target.value)}} />
           </div>
           <div className='form-control'>
             <input type="number" required placeholder='Age' value={age} onChange={(e)=>{setAge(e.target.value)}} />
@@ -29,8 +33,10 @@ const AddUser = () => {
           <div className='form-control'>
             <input type="text" required placeholder='Bio' value={bio} onChange={(e)=>{setBio(e.target.value)}}/>
           </div>
+          {/* <input type="submit" onClick={handleAdd} /> */}
+          <button  type="submit">Add User</button>
         </form>
-        <button onClick={handleAdd}>Add User</button>
+        
     </div>
   )
 }
