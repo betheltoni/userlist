@@ -16,7 +16,7 @@ const UserCard = (props:{user:{id:any,name:any,age:any,bio:any;}}) => {
         <div>
             <small>{bio}</small>
         </div>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete}>Delete User</button>
     </div>
   )
 }
