@@ -31,7 +31,7 @@ const AddUser = () => {
             <input type="number" required placeholder='Age' value={age} onChange={(e)=>{setAge(e.target.value)}} />
           </div>
           <div className='form-control'>
-            <input type="text" required placeholder='Bio' value={bio} onChange={(e)=>{setBio(e.target.value)}}/>
+            <textarea  required placeholder='Bio' value={bio} onChange={(e)=>{setBio(e.target.value)}}/>
           </div>
           {/* <input type="submit" onClick={handleAdd} /> */}
           <button  type="submit">Add User</button>
