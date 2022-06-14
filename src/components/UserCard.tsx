@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../Context';
 
-const UserCard = (props:{user:{id:any,name:any,age:any,bio:any;}}) => {
+const UserCard = (props:{user:{id:number,name:string,age:number,bio:string;}}) => {
     const {id,name,age,bio} = props.user;
 
   const {userEvent} = useContext(AppContext);

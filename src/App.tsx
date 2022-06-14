@@ -16,13 +16,13 @@ function App() {
 
   const [users, setUsers] = useState(userList);
 
-  const userEvent = (actionType:any, payload:any) => {
+  const userEvent = (actionType:string, payload:any) => {
     switch(actionType){
       case "ADD_USER" :
         setUsers([...users, payload.newUser])
         return;
       case "REMOVE_USER" :
-        setUsers(users.filter((user: { id: any; }) => user.id !== payload.userId))
+        setUsers(users.filter((user: { id: number; }) => user.id !== payload.userId))
         return;
       default:
         console.log("defualt");
